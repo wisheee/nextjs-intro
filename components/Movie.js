@@ -6,7 +6,7 @@ export default function Movie({ movie }) {
     <div className={styles.wrap}>
       <figure className={styles.img}>
         <Image 
-          src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
           alt={movie.original_title}
           layout='fill'
         />
