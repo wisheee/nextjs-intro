@@ -20,7 +20,7 @@ export default function Home({ results }) {
 
 export async function getServerSideProps() {
   const { results } = await (
-    await fetch(`${process.env.VERCEL_URL}/api/movies/popular`)
+    await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/movies/popular`)
   ).json();
   return {
     props: {
