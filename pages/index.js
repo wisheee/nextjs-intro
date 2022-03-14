@@ -6,14 +6,6 @@ export default function Home({ results }) {
     <div className="container">
       <Seo title="Home" />
       {results?.map(movie => <Movie key={movie.id} movie={movie} />)}
-      <style jsx>{`
-        .container {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-          gap: 2rem;
-          padding: 2rem;
-        }
-      `}</style>
     </div>
   );
 }

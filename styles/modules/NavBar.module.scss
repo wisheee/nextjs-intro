@@ -1,8 +1,12 @@
+@import '../abstracts/variables';
+
 .nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 1rem 0 2rem;
+  padding: 1rem 0 0;
+  margin: 0 auto;
+  max-width: $max-width;
 
   a {
     width: 8rem;

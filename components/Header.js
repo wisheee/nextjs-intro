@@ -1,13 +1,11 @@
+import NavBar from "./NavBar";
+import styles from "../styles/modules/Header.module.scss";
+
 export default function Header() {
   return (
-    <header>
-      <h1>🎬 Wishee 영화관 🎥💡</h1>
-      <style jsx>{`
-        h1 {
-          text-align: center;
-          margin: 3rem 0 0;
-        }
-      `}</style>
+    <header className={styles.header}>
+      <h1 className={styles.title}>🎬 Wishee 영화관 🎥💡</h1>
+      <NavBar />
     </header>
   );
 }

@@ -37,3 +37,14 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+main {
+  padding-top: 13rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
