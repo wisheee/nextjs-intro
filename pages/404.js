@@ -6,7 +6,7 @@ export default function NotFound() {
       <h3>페이지를 찾을 수 없습니다</h3>
       <style jsx>{`
         div {
-          padding-top: 5rem;
+          padding: 5rem 2rem;
           text-align: center;
           font-size: 4rem;
         }
