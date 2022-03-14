@@ -1,4 +1,4 @@
-import styles from "../../styles/Movie.module.scss";
+import styles from "../../styles/modules/Movie.module.scss";
 
 export default function Detail({ movie }) {
   console.log(movie);
