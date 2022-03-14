@@ -1,4 +1,4 @@
-import Movie from "../components/Movie";
+import Movie from "../components/movies/Movie";
 import Seo from "../components/Seo";
 
 export default function Home({ results }) {
