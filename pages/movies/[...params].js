@@ -18,7 +18,6 @@ export default function MovieDetail({ params }) {
     <div>
       <Seo title={title} />
       {movie && <Detail movie={movie} />}
-      <h4>{title || "Loading..."}</h4>
     </div>
   );
 }

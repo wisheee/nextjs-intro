@@ -1,0 +1,76 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 2rem 5rem;
+}
+
+.img {
+  overflow: hidden;
+  position: relative;
+  width: 30rem;
+  height: 45rem;
+  border-radius: 1.2rem;
+  box-shadow: rgba(255, 255, 255, 0.1) 0 0.4rem 1.2rem;
+}
+
+.title {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-size: 2.5rem;
+  font-weight: $fw-normal;
+  text-align: center;
+
+  span {
+    font-size: 1.8rem;
+    opacity: 0.6;
+  }
+}
+
+.genre {
+  display: inline-block;
+  margin: 1rem 0.5em;
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  background-color: #1351f9;
+  font-size: 1.2rem;
+}
+
+.tagline {
+  margin: 1rem 0;
+  font-size: 2rem;
+  font-weight: $fw-normal;
+  font-style: italic;
+}
+
+.overviewTitle {
+  margin: 1rem 0;
+  font-size: 1.8rem;
+}
+
+.overview {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.releaseInfo {
+  display: flex;
+  padding: 0;
+  font-size: 1.3rem;
+
+  li {
+    list-style: none;
+
+    &:not(:first-child) {
+      margin-left: 1rem;
+    }
+
+    &::before {
+      content: '🔸 ';
+    }
+  }
+}
