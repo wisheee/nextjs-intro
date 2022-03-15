@@ -38,6 +38,20 @@ img {
   height: auto;
 }
 
+::-webkit-scrollbar {
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: transparent;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  height: 0.8rem;
+  background-color: #a5a5a5;
+  border-radius: 1rem;
+}
+
 main {
   padding-top: 13rem;
 }
