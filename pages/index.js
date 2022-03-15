@@ -13,7 +13,7 @@ export default function Home() {
     // 인기 영화 fetch
     (async () => {
       const { results } = await (
-        await fetch('/api/movies/popular')
+        await fetch('/api/movies/popular/1')
       ).json();
       setPopularMovies(results);
     })();
@@ -21,7 +21,7 @@ export default function Home() {
     // 현재 상영 영화 fetch
     (async () => {
       const { results } = await (
-        await fetch('/api/movies/nowPlaying')
+        await fetch('/api/movies/nowPlaying/1')
       ).json();
       setNowPlayingMovies(results);
     })();
@@ -29,7 +29,7 @@ export default function Home() {
     // 상영 예정 영화 fetch
     (async () => {
       const { results } = await (
-        await fetch('/api/movies/upcoming')
+        await fetch('/api/movies/upcoming/1')
       ).json();
       setUpcomingMovies(results);
     })();

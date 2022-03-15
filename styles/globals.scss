@@ -69,3 +69,15 @@ main {
   gap: 2rem;
   padding: 2rem;
 }
+
+.moreBtn {
+  margin: 1rem auto 6rem;
+  display: block;
+  width: 95%;
+  line-height: 2.5;
+  background-color: #252525;
+  border-radius: 2rem;
+  font-size: 1.5rem;
+
+  @include hover-effect;
+}

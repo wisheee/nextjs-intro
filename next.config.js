@@ -9,16 +9,16 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/api/movies/popular',
-        destination: `${DESTINATION_URL}movie/popular?${DESTINATION_URL_PARAMS}`
+        source: '/api/movies/popular/:page',
+        destination: `${DESTINATION_URL}movie/popular?${DESTINATION_URL_PARAMS}&page=:page`
       },
       {
-        source: '/api/movies/nowPlaying',
-        destination: `${DESTINATION_URL}movie/now_playing?${DESTINATION_URL_PARAMS}`
+        source: '/api/movies/nowPlaying/:page',
+        destination: `${DESTINATION_URL}movie/now_playing?${DESTINATION_URL_PARAMS}&page=:page`
       },
       {
-        source: '/api/movies/upcoming',
-        destination: `${DESTINATION_URL}movie/upcoming?${DESTINATION_URL_PARAMS}`
+        source: '/api/movies/upcoming/:page',
+        destination: `${DESTINATION_URL}movie/upcoming?${DESTINATION_URL_PARAMS}&page=:page`
       },
       {
         source: '/api/movies/:id',

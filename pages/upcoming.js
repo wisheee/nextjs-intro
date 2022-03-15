@@ -1,22 +1,31 @@
+import { useState, useEffect } from "react";
 import Movie from "../components/movies/Movie";
 import Seo from "../components/Seo";
+import Loading from "../components/Loading";
 
-export default function Upcoming({ results }) {
+export default function Upcoming() {
+  const [movies, setMovies] = useState([]);
+  const [page, setPage] = useState(1);
+  const onClick = () => {
+    setPage(prev => prev + 1);
+  }
+  useEffect(() => {
+    (async () => {
+      const { results } = await (
+        await fetch(`/api/movies/upcoming/${page}`)
+      ).json();
+      setMovies(prev => [...prev, ...results]);
+    })();
+  }, [page]);
+
   return (
-    <div className="container">
-      <Seo title="상영예정" />
-      {results?.map(movie => <Movie key={movie.id} movie={movie} />)}
-    </div>
+    <>
+      <div className="container">
+        <Seo title="상영예정" />
+        {!movies && <Loading />}
+        {movies?.map(movie => <Movie key={movie.id} movie={movie} />)}
+      </div>
+      <button onClick={onClick} className="moreBtn">더보기</button>
+    </>
   );
-}
-
-export async function getServerSideProps() {
-  const { results } = await (
-    await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/movies/upcoming`)
-  ).json();
-  return {
-    props: {
-      results
-    }
-  };
 }
