@@ -74,3 +74,14 @@
     }
   }
 }
+
+.btnWrap {
+  width: 100%;
+  text-align: right;
+
+  button {
+    font-size: 1.4rem;
+    
+    @include hover-effect;
+  }
+}

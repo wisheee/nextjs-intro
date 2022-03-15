@@ -26,3 +26,12 @@
   white-space: nowrap;
   clip: rect(0, 0, 0, 0);
 }
+
+@mixin hover-effect {
+  opacity: 0.8;
+  transition: 0.3s;
+
+  &:hover {
+    opacity: 1;
+  }
+}

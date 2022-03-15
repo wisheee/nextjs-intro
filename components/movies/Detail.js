@@ -1,7 +1,10 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import styles from "../../styles/modules/Detail.module.scss";
 
 export default function Detail({ movie }) {
+  const router = useRouter();
+
   return (
     <div className={styles.wrap}>
       <figure className={styles.img}>
@@ -25,6 +28,9 @@ export default function Detail({ movie }) {
         <h6 className={styles.overviewTitle}>개요</h6>
         <p className={styles.overview}>{movie.overview}</p>
       </section>
+      <div className={styles.btnWrap}>
+        <button onClick={() => router.back()}>🔙 돌아가기</button>
+      </div>
     </div>
   );
 }
