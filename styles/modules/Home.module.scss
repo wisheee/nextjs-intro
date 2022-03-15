@@ -2,6 +2,10 @@
 
 .container {
   padding: 1rem 0 5rem;
+
+  section {
+    position: relative;
+  }
 }
 
 .wrap {
@@ -14,4 +18,16 @@
 .title {
   font-weight: $fw-normal;
   font-size: 1.7rem;
+}
+
+.viewMore {
+  position: absolute;
+  top: 0.5rem;
+  right: 0;
+  font-size: 1.3rem;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+  }
 }
