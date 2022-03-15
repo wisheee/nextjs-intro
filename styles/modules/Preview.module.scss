@@ -1,0 +1,44 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.wrap {
+  flex: 1 0 25%;
+  margin: 0 1rem;
+  min-height: 25rem;
+  cursor: pointer;
+  scroll-snap-align: start;
+  
+  &:hover {
+    .img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.img {
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  height: 75%;
+  border-radius: 1.2rem;
+  box-shadow: rgba(255, 255, 255, 0.1) 0 0.4rem 1.2rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.title {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-size: 1.4rem;
+  font-weight: $fw-normal;
+  text-align: center;
+
+  @include ellipsis;
+}
+
+.date {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 1.2rem;
+  font-weight: $fw-light;
+  text-align: right;
+}
