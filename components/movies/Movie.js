@@ -18,7 +18,7 @@ export default function Movie({ movie }) {
         />
       </figure>
       <h4 className={styles.title} title={movie.title}>{movie.title}</h4>
-      <h5 className={styles.date}>{movie.release_date}</h5>
+      <h5 className={styles.date}>{movie.release_date.replaceAll('-', '/')}</h5>
     </div>
   );
 }
