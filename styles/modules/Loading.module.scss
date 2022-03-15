@@ -1,0 +1,18 @@
+@import '../abstracts/variables';
+@import '../base/animation';
+
+.loading {
+  margin: auto;
+  width: 5.4rem;
+  height: 5.4rem;
+  animation: loading-spin 3s infinite;
+
+  circle {
+    stroke: $c-main-blue;
+    stroke-width: 4;
+    stroke-dasharray: 157;
+    stroke-dashoffset: 0;
+    fill: transparent;
+    animation: loading-circle 1s infinite;
+  }
+}

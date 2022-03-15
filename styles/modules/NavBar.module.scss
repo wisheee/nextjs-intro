@@ -17,7 +17,7 @@
     &::after {
       content: '';
       display: block;
-      border-bottom: 0.2rem solid #264ff0;
+      border-bottom: 0.2rem solid $c-main-blue;
       transform: scaleX(0);
       transition: 0.3s ease-in-out;
     }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Preview from "../components/movies/Preview";
+import Loading from "../components/Loading";
 import Seo from "../components/Seo";
 import styles from "../styles/modules/Home.module.scss";
 
@@ -42,7 +43,7 @@ export default function Home() {
           <a className={styles.viewMore}>더보기</a>
         </Link>
         <div className={styles.wrap}>
-          {!popularMovies && <div>Loading...</div>}
+          {!popularMovies && <Loading />}
           {popularMovies?.map(movie => <Preview key={movie.id} movie={movie} />)}
         </div>
       </section>
@@ -52,7 +53,7 @@ export default function Home() {
           <a className={styles.viewMore}>더보기</a>
         </Link>
         <div className={styles.wrap}>
-          {!nowPlayingMovies && <div>Loading...</div>}
+          {!nowPlayingMovies && <Loading />}
           {nowPlayingMovies?.map(movie => <Preview key={movie.id} movie={movie} />)}
         </div>
       </section>
@@ -62,7 +63,7 @@ export default function Home() {
           <a className={styles.viewMore}>더보기</a>
         </Link>
         <div className={styles.wrap}>
-          {!upcomingMovies && <div>Loading...</div>}
+          {!upcomingMovies && <Loading />}
           {upcomingMovies?.map(movie => <Preview key={movie.id} movie={movie} />)}
         </div>
       </section>
