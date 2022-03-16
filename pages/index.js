@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Preview from "../components/movies/Preview";
-import Loading from "../components/Loading";
 import Seo from "../components/Seo";
 import styles from "../styles/modules/Home.module.scss";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 export default function Home() {
   const [popularMovies, setPopularMovies] = useState();
@@ -42,30 +46,69 @@ export default function Home() {
         <Link href="/popular">
           <a className={styles.viewMore}>더보기</a>
         </Link>
-        <div className={styles.wrap}>
-          {!popularMovies && <Loading />}
-          {popularMovies?.map(movie => <Preview key={movie.id} movie={movie} />)}
-        </div>
+        <Swiper
+          modules={[Pagination, Navigation]}
+          spaceBetween={20}
+          slidesPerView={3}
+          slidesPerGroup={3}
+          loop={true}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+        >
+          {popularMovies?.map(movie => (
+            <SwiperSlide key={movie.id}>
+              <Preview movie={movie} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </section>
       <section>
         <h2 className={styles.title}>🎞️ 현재 상영 중인 영화</h2>
         <Link href="/nowPlaying">
           <a className={styles.viewMore}>더보기</a>
         </Link>
-        <div className={styles.wrap}>
-          {!nowPlayingMovies && <Loading />}
-          {nowPlayingMovies?.map(movie => <Preview key={movie.id} movie={movie} />)}
-        </div>
+        <Swiper
+          modules={[Pagination, Navigation]}
+          spaceBetween={20}
+          slidesPerView={3}
+          slidesPerGroup={3}
+          loop={true}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+        >
+          {nowPlayingMovies?.map(movie => (
+            <SwiperSlide key={movie.id}>
+              <Preview movie={movie} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </section>
       <section>
         <h2 className={styles.title}>📌 상영 예정인 영화</h2>
         <Link href="/upcoming">
           <a className={styles.viewMore}>더보기</a>
         </Link>
-        <div className={styles.wrap}>
-          {!upcomingMovies && <Loading />}
-          {upcomingMovies?.map(movie => <Preview key={movie.id} movie={movie} />)}
-        </div>
+        <Swiper
+          modules={[Pagination, Navigation]}
+          spaceBetween={20}
+          slidesPerView={3}
+          slidesPerGroup={3}
+          loop={true}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+        >
+          {upcomingMovies?.map(movie => (
+            <SwiperSlide key={movie.id}>
+              <Preview movie={movie} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </section>
     </div>
   );

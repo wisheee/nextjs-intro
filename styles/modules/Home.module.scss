@@ -9,14 +9,6 @@
   }
 }
 
-.wrap {
-  display: flex;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
-}
-
 .title {
   font-weight: $fw-normal;
   font-size: 1.7rem;
