@@ -3,6 +3,8 @@ import Preview from "./Preview";
 import styles from "../../styles/modules/PreviewFactory.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLeftLong, faRightLong } from "@fortawesome/free-solid-svg-icons";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -11,6 +13,12 @@ export default function PreviewFactory({ movieType }) {
   const [movies, setMovies] = useState();
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+  const onSwiperInit = (swiper) => {
+    swiper.params.navigation.prevEl = prevRef.current;
+    swiper.params.navigation.nextEl = nextRef.current;
+    swiper.navigation.init();
+    swiper.navigation.update();
+  }
   useEffect(() => {
     (async () => {
       const { results } = await (
@@ -31,10 +39,7 @@ export default function PreviewFactory({ movieType }) {
       }}
       navigation={true}
       onInit={(swiper) => {
-        swiper.params.navigation.prevEl = prevRef.current;
-        swiper.params.navigation.nextEl = nextRef.current;
-        swiper.navigation.init();
-        swiper.navigation.update();
+        onSwiperInit(swiper);
       }}
     >
       {movies?.map(movie => (
@@ -42,8 +47,14 @@ export default function PreviewFactory({ movieType }) {
           <Preview movie={movie} />
         </SwiperSlide>
       ))}
-      <button ref={prevRef} className={styles.button}>&lt;<span>이전</span></button>
-      <button ref={nextRef} className={styles.button}>&gt;<span>다음</span></button>
+      <button ref={prevRef} className={styles.button}>
+        <span>이전</span>
+        <FontAwesomeIcon icon={faLeftLong} />
+      </button>
+      <button ref={nextRef} className={styles.button}>
+        <span>다음</span>
+        <FontAwesomeIcon icon={faRightLong} />
+      </button>
     </Swiper>
   );
 }
