@@ -1,0 +1,25 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.button {
+  position: absolute;
+  bottom: 0.5rem;
+  z-index: $z-swiper-btn;
+
+  &:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  &:nth-of-type(1) {
+    left: 0;
+  }
+
+  &:nth-of-type(2) {
+    right: 0;
+  }
+
+  span {
+    @include blind;
+  }
+}

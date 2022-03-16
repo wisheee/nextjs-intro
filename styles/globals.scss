@@ -37,7 +37,10 @@ button {
   color: inherit;
   background-color: transparent;
   border: none;
-  cursor: pointer;
+  
+  &:not(:disabled) {
+    cursor: pointer;
+  }
 }
 
 img {
