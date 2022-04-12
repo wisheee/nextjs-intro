@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
+import { NextSeo } from "next-seo";
 import Movie from "../components/movies/Movie";
-import Seo from "../components/Seo";
 import Loading from "../components/Loading";
 
 export default function Popular() {
@@ -21,7 +21,10 @@ export default function Popular() {
   return (
     <>
       <div className="container">
-        <Seo title="인기영화" />
+        <NextSeo 
+          title="Wishee 영화관 | 인기영화"
+          description="지금 가장 인기있는 영화 목록입니다"
+        />
         {!movies && <Loading />}
         {movies?.map(movie => <Movie key={movie.id} movie={movie} />)}
       </div>

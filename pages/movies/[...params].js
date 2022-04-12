@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Detail from "../../components/movies/Detail";
-import Seo from "../../components/Seo";
 
 export default function MovieDetail({ params }) {
   const [title, id] = params;
@@ -16,7 +15,6 @@ export default function MovieDetail({ params }) {
   
   return (
     <div>
-      <Seo title={title} />
       {movie && <Detail movie={movie} />}
     </div>
   );

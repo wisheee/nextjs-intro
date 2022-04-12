@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
+import { NextSeo } from "next-seo";
 import Movie from "../components/movies/Movie";
-import Seo from "../components/Seo";
 import Loading from "../components/Loading";
 
 export default function Upcoming() {
@@ -21,7 +21,10 @@ export default function Upcoming() {
   return (
     <>
       <div className="container">
-        <Seo title="상영예정" />
+        <NextSeo 
+          title="Wishee 영화관 | 상영예정"
+          description="상영 예정인 영화 목록입니다"
+        />
         {!movies && <Loading />}
         {movies?.map(movie => <Movie key={movie.id} movie={movie} />)}
       </div>

@@ -1,12 +1,10 @@
 import Link from "next/link";
-import Seo from "../components/Seo";
 import PreviewFactory from "../components/movies/PreviewFactory";
 import styles from "../styles/modules/Home.module.scss";
 
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Seo title="Home" />
       <section>
         <h2 className={styles.title}>😀 지금 가장 인기있는 영화</h2>
         <Link href="/popular">
