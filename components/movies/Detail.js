@@ -12,6 +12,8 @@ export default function Detail({ movie }) {
         title={`Wishee 영화관 | ${movie.title}`}
         description={movie.overview}
         openGraph={{
+          title: movie.title,
+          description: movie.overview,
           images: [
             {
               url: `https://image.tmdb.org/t/p/w500${movie.poster_path}`
